@@ -1,0 +1,4 @@
+= form_for @book, class: 'registration-form' do |f|
+  = f.text_field :name, placeholder: 'Название книги'
+  = f.text_field :author, placeholder: 'Имя автора'
+  = f.submit 'Сохранить'
