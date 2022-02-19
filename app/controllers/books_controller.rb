@@ -13,12 +13,24 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = Book.new(books_params)
-    if @book.save
+    book = Book.new
+    result = Books::Save.call(params: books_params, book: book)
+    if result.success?
       redirect_to books_path
     else
       render 'new'
     end
+
+    # respond_to do |format|
+    #   format.js do
+    #     if result.success?
+    #       render json: { favorite_id: book.id }, status: :ok
+    #     else
+    #       render json: { errors: result.errors.messages }, status: :unprocessable_entity
+    #     end
+    #   end
+    # end
+
   end
 
   def edit; end

@@ -17,7 +17,10 @@ gem 'slim-rails', '~> 3.1', '>= 3.1.3'
 gem 'html2slim'
 gem 'bootstrap', '~> 5.1', '>= 5.1.3'
 gem 'jquery-rails'
-
+gem "interactor", "~> 3.0"
+gem 'reform'
+gem 'reform-rails'
+# gem "responders"
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
