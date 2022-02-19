@@ -1,0 +1,31 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  collation: utf8_general_ci
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password: password
+  host: 127.0.0.1
+  port: <%= Gem.win_platform? ? '3307' : '3306' %>
+
+development:
+  <<: *default
+  database: book_catalog_development
+
+test:
+  <<: *default
+  database: book_catalog_test
+
+production:
+  <<: *default
+  database: book_catalog_production
+  reconnect: true
+  reaping_frequency: 5
+  dead_connection_timeout: 15
+
+staging:
+  <<: *default
+  database: book_catalog_staging
+  reconnect: true
+  reaping_frequency: 5
+  dead_connection_timeout: 15
