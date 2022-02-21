@@ -5,7 +5,8 @@ class BooksController < ApplicationController
   before_action :set_books, only: [:edit, :update, :destroy]
 
   def index
-    @books = Book.all
+    @q = Book.ransack(params[:q])
+    @books = @q.result(distinct: true)
   end
 
   def new

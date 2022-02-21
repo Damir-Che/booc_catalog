@@ -20,6 +20,7 @@ gem 'jquery-rails'
 gem "interactor", "~> 3.0"
 gem 'reform'
 gem 'reform-rails'
+gem 'ransack'
 # gem "responders"
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
