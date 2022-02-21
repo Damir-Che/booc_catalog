@@ -4,8 +4,8 @@ module Books
   class BookForm < ::ApplicationForm
     model :book
 
-    properties :name, :author
+    properties :name, :author, :date
 
-    validates :name, :author, presence: true
+    validates :name, :author, :date, presence: true
   end
 end

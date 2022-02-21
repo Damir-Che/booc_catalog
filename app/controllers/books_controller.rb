@@ -45,13 +45,13 @@ class BooksController < ApplicationController
 
   def destroy
     @book.destroy
-    redirect_to books_path, success: 'Статья успешно удалена'
+    redirect_to books_path
   end
 
   private
 
   def books_params
-    params.require(:book).permit(:name, :author)
+    params.require(:book).permit(:name, :author, :date)
   end
 
   def set_books

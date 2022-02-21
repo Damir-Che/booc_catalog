@@ -8,7 +8,6 @@ module Books
     delegate :params, to: :context
 
     def call
-
       context.fail!(errors: form.errors) unless form.validate(form_params)
 
       form.save do |hash|
@@ -21,13 +20,13 @@ module Books
     def form_params
       {
         name: params[:name],
-        author: params[:author]
+        author: params[:author],
+        date: params[:date]
       }
     end
 
     def form
       @form ||= Books::BookForm.new(book)
     end
-
   end
 end

@@ -1,4 +1,5 @@
 = form_for @book, class: 'registration-form' do |f|
   = f.text_field :name, placeholder: 'Название книги'
   = f.text_field :author, placeholder: 'Имя автора'
+  = f.date_field :date, as: :date, value: f.object.try(:strftime,"%m/%d/%Y"), class: 'form-control'
   = f.submit 'Сохранить'
