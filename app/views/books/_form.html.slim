@@ -1,5 +1,13 @@
 = form_for @book, class: 'registration-form' do |f|
-  = f.text_field :name, placeholder: 'Название книги'
-  = f.text_field :author, placeholder: 'Имя автора'
-  = f.date_field :date, as: :date, value: f.object.try(:strftime,"%m/%d/%Y"), class: 'form-control'
-  = f.submit 'Сохранить'
+  form.mt-4.col-sm-6
+    fieldset.form-group
+      label for="first_name"  Название книги:
+      = f.text_field :name, placeholder: 'Война и мир', class: 'form-control', id: 'first_name'
+    fieldset.form-group
+      label for="last_name"  Имя автора:
+      = f.text_field :author, placeholder: 'Толстой', class: 'form-control', id: 'last_name'
+    fieldset.form-group
+      label for="date"  Год выхода:
+      = f.select :date, options_for_select((Time.zone.now.year - 100)..(Time.zone.now.year + 1)),
+                  {},class: "form-control"
+    = f.submit 'Сохранить', class: 'btn btn-primary mt-3'
