@@ -23,9 +23,13 @@ gem 'reform-rails'
 gem 'ransack'
 gem 'rubocop-rails', require: false
 gem 'slim_lint', '~> 0.22.1'
-# gem "responders"
+gem 'rails-controller-testing'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
+  gem 'factory_bot_rails'
+  gem 'rubocop-rspec', require: false
 end
 
 group :development do
