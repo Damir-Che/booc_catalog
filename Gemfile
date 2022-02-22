@@ -21,6 +21,8 @@ gem "interactor", "~> 3.0"
 gem 'reform'
 gem 'reform-rails'
 gem 'ransack'
+gem 'rubocop-rails', require: false
+gem 'slim_lint', '~> 0.22.1'
 # gem "responders"
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
