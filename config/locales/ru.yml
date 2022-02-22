@@ -8,3 +8,6 @@ ru:
     save: 'Сохранить'
     change: 'Изменить'
     delete: 'Удалить'
+  will_paginate:
+    previous_label: '&larr; Туда'
+    next_label: 'Сюда &rarr;'

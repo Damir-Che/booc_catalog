@@ -24,6 +24,7 @@ gem 'ransack'
 gem 'rubocop-rails', require: false
 gem 'slim_lint', '~> 0.22.1'
 gem 'rails-controller-testing'
+gem 'will_paginate', '~> 3.3'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
