@@ -1,13 +1,13 @@
 = form_for @book, class: 'registration-form' do |f|
   form.mt-4.col-sm-5
     fieldset.form-group
-      label for="first_name"  Название книги:
+      label for="first_name"  = t('books.name')
       = f.text_field :name, placeholder: 'Война и мир', class: 'form-control', id: 'first_name', required: true
     fieldset.form-group
-      label for="last_name"  Имя автора:
+      label for="last_name"  = t('books.author_name')
       = f.text_field :author, placeholder: 'Толстой', class: 'form-control', id: 'last_name', required: true
     fieldset.form-group
-      label for="date"  Год выхода:
+      label for="date"  = t('books.release_year')
       = f.select :date, options_for_select((Time.zone.now.year - 100)..(Time.zone.now.year + 1)),
               {include_blank: '1864'},class: "form-control", required: true
-    = f.submit 'Сохранить', class: 'btn btn-primary mt-3'
+    = f.submit t('books.save'), class: 'btn btn-primary mt-3'

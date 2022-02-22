@@ -3,13 +3,13 @@
 article
   - @books.each do |book|
     section.post-header
-      h5 Название книги:
+      h5  #{t('books.name')}:
         "#{book.name}"
-      p Автор:
+      p #{t('books.author_name')}:
         "#{book.author}"
-      p Год:
+      p #{t('books.release_year')}:
         "#{book.date}"
       small
-        = link_to "Изменить", edit_book_path(book), class: 'btn btn-primary m-1'
-        = link_to "Удалить", book_path(book), method: :delete, data: {confirm: 'Вы уверены?'}, class: 'btn btn-danger'
+        = link_to t('books.change'), edit_book_path(book), class: 'btn btn-primary m-1'
+        = link_to t('books.delete'), book_path(book), method: :delete, class: 'btn btn-danger'
     hr

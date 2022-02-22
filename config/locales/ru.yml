@@ -1,0 +1,10 @@
+ru:
+  books:
+    home: 'Главная'
+    add_book: 'Добавить книгу'
+    name: 'Название книги'
+    author_name: 'Имя автора'
+    release_year: 'Год выхода'
+    save: 'Сохранить'
+    change: 'Изменить'
+    delete: 'Удалить'
