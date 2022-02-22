@@ -2,12 +2,12 @@
   form.mt-4.col-sm-5
     fieldset.form-group
       label for="first_name"  Название книги:
-      = f.text_field :name, placeholder: 'Война и мир', class: 'form-control', id: 'first_name'
+      = f.text_field :name, placeholder: 'Война и мир', class: 'form-control', id: 'first_name', required: true
     fieldset.form-group
       label for="last_name"  Имя автора:
-      = f.text_field :author, placeholder: 'Толстой', class: 'form-control', id: 'last_name'
+      = f.text_field :author, placeholder: 'Толстой', class: 'form-control', id: 'last_name', required: true
     fieldset.form-group
       label for="date"  Год выхода:
       = f.select :date, options_for_select((Time.zone.now.year - 100)..(Time.zone.now.year + 1)),
-                  {},class: "form-control"
+              {include_blank: '1864'},class: "form-control", required: true
     = f.submit 'Сохранить', class: 'btn btn-primary mt-3'
