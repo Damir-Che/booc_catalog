@@ -1,7 +1,10 @@
 form.form-inline.row.mt-3.mb-4.col-sm-12
   = search_form_for @q do |f|
     .col-sm-2
-      = f.search_field :name_or_author_cont, class: 'form-control', placeholder: "#{ t('books.name')}"
+      = f.search_field :name_cont, class: 'form-control', placeholder: "#{ t('books.name')}"
+    .col-sm-2
+      = f.select :author_cont, options_for_select(Book.all.map(&:author).uniq),
+              {include_blank: 'Поиск по автору'}, class: "form-control"
     .col-sm-2
       = f.select :date_gteq, options_for_select(Book.all.map(&:date).uniq),
                   {include_blank: 'С..'}, class: "form-control"
